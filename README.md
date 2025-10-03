@@ -1,9 +1,9 @@
-# 🏛️ GenAI Museum Project  
+# GenAI Museum Project  
 **Prototyp zur Generierung von Katalogtexten für Museumsobjekte mittels GenAI (OpenAI API)**  
 
 ---
 
-## 👥 Autoren (HTW Berlin)
+## Autoren (HTW Berlin)
 
 - Liepa Čivilytė  
 - Eshmam Dulal  
@@ -13,7 +13,7 @@
 
 ---
 
-## 🎯 Projektziel
+## Projektziel
 
 Ziel dieses Projekts ist es, zu untersuchen, **wie generative KI-Modelle** (z. B. GPT-5 oder Gemini) zur **automatischen Erstellung präziser Katalogtexte** in Museen eingesetzt werden können.  
 Der Fokus liegt auf der **faktischen Beschreibung** (ohne Interpretation oder Bewertung) von Objekten im Depot des **Technikmuseums Berlin**.
@@ -24,7 +24,7 @@ Dieses Projekt ist Teil der Aufgabenstellung:
 
 ---
 
-## ⚙️ Architekturüberblick
+## Architekturüberblick
 
 Der entwickelte Prototyp besteht aus zwei zentralen Komponenten:
 
@@ -33,14 +33,14 @@ Der entwickelte Prototyp besteht aus zwei zentralen Komponenten:
 | **`backend.py`** | Enthält die gesamte Logik zur Datenverarbeitung, API-Kommunikation (OpenAI) und den Excel-Export der Ergebnisse. |
 | **`gui.py`** | Grafische Benutzeroberfläche auf Basis von **CustomTkinter** mit **Drag & Drop**, Datei-Dialogen und Live-Protokollierung. |
 
-> 💡 Zusätzlich wurde eine alternative Implementierung mit der **Gemini API** entwickelt.  
-> 🔗 **Platzhalter-Link:** [Gemini-Prototyp Repository](https://github.com/MilosSchlessing/Informatic-and-Education.git)
+> Zusätzlich wurde eine alternative Implementierung mit der **Gemini API** entwickelt.  
+> **Link:** [Gemini-Prototyp Repository](https://github.com/MilosSchlessing/Informatic-and-Education.git)
 
 ---
 
-## 📦 Eingaben & Ausgaben
+## Eingaben & Ausgaben
 
-### 🔹 Eingaben (2 Inputs)
+### Eingaben (2 Inputs)
 1. **Excel-Datei (.xlsx)**  
    Enthält Metadaten zu Objekten (z. B. Titel, Hersteller, Jahr, Gewicht, Beschreibung).  
    Wichtige Spaltennamen: `T1/T13` für Objekt-ID und Bildpfade.
@@ -51,7 +51,7 @@ Der entwickelte Prototyp besteht aus zwei zentralen Komponenten:
 
 > Beide Eingaben werden komfortabel über die **GUI** ausgewählt – wahlweise per **Dateidialog** oder **Drag & Drop**.
 
-### 🔹 Ausgabe
+### Ausgabe
 - Eine **Excel-Datei** mit den generierten Katalogtexten in den gewählten Sprachen.  
 - Spaltenstruktur:
   - `Object ID`, `Images`
@@ -59,7 +59,7 @@ Der entwickelte Prototyp besteht aus zwei zentralen Komponenten:
 
 ---
 
-## 🌍 Sprachunterstützung
+## Sprachunterstützung
 
 Der Prototyp unterstützt aktuell **vier Sprachen**:
 
@@ -74,7 +74,7 @@ Die gewünschte Sprache wird in der GUI über ein Dropdown-Menü ausgewählt.
 
 ---
 
-## 🔐 API-Zugriff & `.env`-Datei
+## API-Zugriff & `.env`-Datei
 
 Für den Zugriff auf die OpenAI API wird ein **gültiger API Key** benötigt.  
 Dieser muss in einer **`.env`-Datei** im Projektverzeichnis hinterlegt werden.
@@ -83,5 +83,32 @@ Dieser muss in einer **`.env`-Datei** im Projektverzeichnis hinterlegt werden.
 ```env
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+## Ausführung
+
+### 1. Virtuelle Umgebung erstellen und aktivieren
+
+```bash
+python3 -m venv venv
+source venv/bin/activate      # macOS / Linux
+venv\Scripts\activate         # Windows
+```
+
+### 2. Abhängigkeiten
+```env
+pip install -r requirements.txt
+```
+
+### 3. .env-Datei anlegen (siehe oben)
+```bash
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+### 4. Programm starten
+```bash
+python gui.py
+```
+
+
 
 
